@@ -1,0 +1,46 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">lastName</th>
+        <th scope="col">firstName</th>
+        <th scope="col">specialite</th>
+        <th scope="col">adresse</th>
+        <th scope="col">ville</th>
+        <th scope="col">email</th>
+        <th scope="col">password</th>
+        <th scope="col">codePostal</th>
+        <th scope="col">contact</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let admin of adminList">
+        <td>{{ admin.id }}</td>
+        <td>{{ admin.lastName }}</td>
+        <td>{{ admin.firstName }}</td>
+        <td>{{ admin.specialite }}</td>
+        <td>{{ admin.contact }}</td>
+        <td>{{ admin.password }}</td>
+        <td>{{ admin.email }}</td>
+        <td>{{ admin.adresse }}</td>
+        <td>{{ admin.ville }}</td>
+        <td>{{ admin.codePostal }}</td>
+        <td>{{admin.createdAt  }}</td>
+
+<td [style.color]="admin.status ? 'green' : 'red' ">
+    {{admin.status }}
+</td>
+<a 
+   href="#deleteModal"
+   class="delete"
+   data-toggle="modal"
+
+   ><i class="material-icons" data-toggle="tooltip" title="Delete"
+   >&#xE872;</i
+    ></a
+    >
+   
+  </tr>
+    </tbody>
+    
+

@@ -1,0 +1,53 @@
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">lastName</th>
+        <th scope="col">firstName</th>
+        <th scope="col">adresse</th>
+        <th scope="col">contact</th>
+        <th scope="col">codePostal</th>
+        <th scope="col">ville</th>
+        <th scope="col">sexe</th>
+        <th scope="col">email</th>
+        <th scope="col">password</th>
+        <th scope="col">dateNaissance</th>
+        <th scope="col">historiqueMedical</th>
+        <th scope="col">createdAt</th>
+        
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+<tbody>
+<tr *ngFor="let patient of patientList">
+    <td>{{ patient.id }}</td>
+    <td>{{ patient.lastName }}</td>
+    <td>{{ patient.firstName }}</td>
+    <td>{{ patient.adresse }}</td>
+    <td>{{ patient.contact }}</td>
+    <td>{{ patient.codePostal }}</td>
+    <td>{{ patient.ville }}</td>
+    <td>{{ patient.sexe }}</td>
+    <td>{{ patient.email }}</td>
+    <td>{{ patient.password }}</td>
+    <td>{{ patient.dateNaissance }}</td>
+    <td>{{ patient.historiqueMedical}}</td>
+    
+    
+    <td [style.color]="patient.status ? 'green' : 'red' ">
+        {{patient.status }}
+    </td>
+    <td>
+    <a
+        href="#deleteModal" 
+        class="delete"
+        data-toggle="modal"
+        ><i class="material-icons" data-toggle="tooltip" title="Delete"
+            >&#xE872;</i
+        ></a
+    ></td>
+    </tr>
+</tbody>
+</table>
+
