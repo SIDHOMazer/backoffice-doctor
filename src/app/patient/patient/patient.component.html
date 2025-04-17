@@ -1,3 +1,22 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row p-3">
+          <div class="col-sm-6">
+            <h2>Gestion des <b>patients</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <a
+            [routerLink]="'/doctor-details/null'"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Add New Employee</span></a
+            >
+         
+          </div>
+        </div>
+      </div>
 
 <table class="table">
     <thead class="thead-dark">
@@ -14,7 +33,8 @@
         <th scope="col">password</th>
         <th scope="col">dateNaissance</th>
         <th scope="col">historiqueMedical</th>
-        <th scope="col">createdAt</th>
+        <th scope="col">date</th>
+        <th scope="col">status</th>
         
         <th scope="col">action</th>
       </tr>
@@ -22,8 +42,8 @@
 <tbody>
 <tr *ngFor="let patient of patientList">
     <td>{{ patient.id }}</td>
-    <td>{{ patient.lastName }}</td>
-    <td>{{ patient.firstName }}</td>
+    <td>{{ patient.lastname }}</td>
+    <td>{{ patient.firstname }}</td>
     <td>{{ patient.adresse }}</td>
     <td>{{ patient.contact }}</td>
     <td>{{ patient.codePostal }}</td>
@@ -33,21 +53,33 @@
     <td>{{ patient.password }}</td>
     <td>{{ patient.dateNaissance }}</td>
     <td>{{ patient.historiqueMedical}}</td>
+
+    <td>{{ patient.createdAt | date}}</td>
     
     
     <td [style.color]="patient.status ? 'green' : 'red' ">
         {{patient.status }}
     </td>
     <td>
-    <a
-        href="#deleteModal" 
-        class="delete"
-        data-toggle="modal"
-        ><i class="material-icons" data-toggle="tooltip" title="Delete"
-            >&#xE872;</i
-        ></a
-    ></td>
-    </tr>
+      <a href="#deleteModal" class="delete" data-toggle="modal"
+      >
+      delete
+      <i class="material-icons" data-toggle="tooltip" title="Delete"
+        >&#xE872;</i
+      ></a
+    >
+    <a [routerLink]="'/doctor-details/'+patient.id"
+    class="delete" data-toggle="modal"
+    >
+    edit
+    <i class="material-icons" data-toggle="tooltip" title="Delete"
+      >&#xE872;</i
+    ></a
+  ></td>
+  </tr>
 </tbody>
 </table>
+</div>
+</div>
+
 

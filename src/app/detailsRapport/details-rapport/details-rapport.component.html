@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row p-3">
+          <div class="col-sm-6">
+            <h2>Gestion des <b>detailsReports</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <a
+            [routerLink]="'/detailsReports-details/null'"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Add New DetailsReports</span></a
+            >
+         
+          </div>
+        </div>
+      </div>
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Currenty</th>
+          <th scope="col">SurgicalHistory</th>
+          <th scope="col">TraumaHistory</th>
+          <th scope="col">HealthHistory</th>
+          <th scope="col">FamilyHealthHistory</th>
+          <th scope="col"> Autre</th>
+          <th scope="col">status</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let detailsReports of detailsRapportist">
+            <td>{{ detailsReports.id }}</td>
+            <td>{{ detailsReports.Currenty }}</td>
+            <td>{{ detailsReports.SurgicalHistory }}</td>
+            <td>{{ detailsReports.TraumaHistory }}</td>
+            <td>{{ detailsReports.HealthHistory }}</td>
+            <td>{{ detailsReports.FamilyHealthHistory }}</td>
+            <td>{{ detailsReports.Autre }}</td>
+            
+        
+          <td>{{detailsReports.createdAt | date }}</td>
+  
+  <td [style.color]="detailsReports.status ? 'green' : 'red' ">
+      {{detailsReports.status }}
+  </td>
+  <td>
+    <a href="#deleteModal" class="delete" data-toggle="modal"
+    >
+    delete
+    <i class="material-icons" data-toggle="tooltip" title="Delete"
+      >&#xE872;</i
+    ></a
+  >
+  <a [routerLink]="'/detailsReports-details/'+detailsReports.id"
+  class="delete" data-toggle="modal"
+  >
+  edit
+  <i class="material-icons" data-toggle="tooltip" title="Delete"
+    >&#xE872;</i
+  ></a
+  ></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row p-3">
+        <div class="col-sm-6">
+          <h2>Gestion des <b>reports</b></h2>
+        </div>
+        <div class="col-sm-6 d-flex justify-content-end">
+          <a
+            [routerLink]="'/report-details/null'"
+            class="btn btn-success"
+            data-toggle="modal"
+            ><i class="material-icons">&#xE147;</i>
+            <span>Add New Report</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">file</th>
+          <th scope="col">patientId</th>
+          <th scope="col">auteur</th>
+          <th scope="col">description</th>
+          <th scope="col">type</th>
+          <th scope="col">date</th>
+          <th scope="col">heure</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let report of rapportList">
+          <td>{{ report.id }}</td>
+          <td>{{ report.file }}</td>
+          <td>{{ report.patientId }}</td>
+          <td>{{ report.auteur }}</td>
+          <td>{{ report.description }}</td>
+          <td>{{ report.type }}</td>
+          <td>{{ report.date }}</td>
+          <td>{{ report.heure }}</td>
+
+          <td>
+            <a href="#deleteModal" class="delete" data-toggle="modal">
+              delete
+              <i class="material-icons" data-toggle="tooltip" title="Delete"
+                >&#xE872;</i
+              ></a
+            >
+            <a
+              [routerLink]="'/report-details/' + report.id"
+              class="delete"
+              data-toggle="modal"
+            >
+              edit
+              <i class="material-icons" data-toggle="tooltip" title="Delete"
+                >&#xE872;</i
+              ></a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -34,6 +34,7 @@
           <th scope="col">localisation</th>
           <th scope="col">sexe</th>
           <th scope="col">date</th>
+          <th scope="col">status</th>
           <th scope="col">action</th>
         </tr>
       </thead>
@@ -51,13 +52,14 @@
           <td>{{ docteur.contact }}</td>
           <td>{{ docteur.localisation }}</td>
           <td>{{ docteur.sexe }}</td>
-       
+          <td>{{ docteur.createdAt | date }}</td>
+          
 
           <td [style.color]="docteur.status ? 'green' : 'red'">
             {{ docteur.status }}
           </td>
           <td>
-          <a href="#deleteModal" class="delete" data-toggle="modal"
+            <a href="#deleteModal" class="delete" data-toggle="modal"
             >
             delete
             <i class="material-icons" data-toggle="tooltip" title="Delete"

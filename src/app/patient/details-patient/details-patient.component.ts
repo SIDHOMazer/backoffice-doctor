@@ -29,6 +29,9 @@ export class DetailsPatientComponent {
       localisation: [''],
       specialite: [''],
       contact: [''],
+      dateNaissance: [''],
+      
+      
     });
   }
   ngOnInit(): void {

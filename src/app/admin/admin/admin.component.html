@@ -1,6 +1,26 @@
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row p-3">
+        <div class="col-sm-6">
+          <h2>Gestion des <b>admins</b></h2>
+        </div>
+        <div class="col-sm-6 d-flex justify-content-end">
+          <a
+          [routerLink]="'/doctor-details/null'"
+            class="btn btn-success"
+            data-toggle="modal"
+            ><i class="material-icons">&#xE147;</i>
+            <span>Add New Employee</span></a
+          >
+       
+        </div>
+      </div>
+    </div>
 <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">id</th>
         <th scope="col">lastName</th>
         <th scope="col">firstName</th>
         <th scope="col">specialite</th>
@@ -10,6 +30,8 @@
         <th scope="col">password</th>
         <th scope="col">codePostal</th>
         <th scope="col">contact</th>
+        <th scope="col">date</th>
+        <th scope="col">status</th>
         <th scope="col">action</th>
       </tr>
     </thead>
@@ -25,22 +47,33 @@
         <td>{{ admin.adresse }}</td>
         <td>{{ admin.ville }}</td>
         <td>{{ admin.codePostal }}</td>
-        <td>{{admin.createdAt  }}</td>
+      
+        <td>{{admin.createdAt | date }}</td>
 
 <td [style.color]="admin.status ? 'green' : 'red' ">
     {{admin.status }}
 </td>
-<a 
-   href="#deleteModal"
-   class="delete"
-   data-toggle="modal"
+<td>
+  <a href="#deleteModal" class="delete" data-toggle="modal"
+  >
+  delete
+  <i class="material-icons" data-toggle="tooltip" title="Delete"
+    >&#xE872;</i
+  ></a
+>
+<a [routerLink]="'/doctor-details/'+admin.id"
+class="delete" data-toggle="modal"
+>
+edit
+<i class="material-icons" data-toggle="tooltip" title="Delete"
+  >&#xE872;</i
+></a
+></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
-   ><i class="material-icons" data-toggle="tooltip" title="Delete"
-   >&#xE872;</i
-    ></a
-    >
-   
-  </tr>
-    </tbody>
-    
+
 

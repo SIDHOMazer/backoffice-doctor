@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row p-3">
+          <div class="col-sm-6">
+            <h2>Gestion des <b>exercicePlans</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <a
+            [routerLink]="'/exercicePlan-details/null'"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Add New exercicePlan</span></a
+            >
+         
+          </div>
+        </div>
+      </div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+           
+            <th scope="col">exerciceId</th>
+            <th scope="col">planDeTraitementId</th>
+            <th scope="col">duree</th>
+            <th scope="col">jour</th>
+            <th scope="col">type</th>
+            <th scope="col">seance</th>
+            <th scope="col">muscles</th>
+            <th scope="col">seriesAndRepetitions</th>
+            <th scope="col">date</th>
+
+            <th scope="col">status</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let exercicePlan of exerciceplanList">
+            <td>{{ exerciceplan.id }}</td>
+            <td>{{ exerciceplan.exerciceId }}</td>
+            <td>{{ exerciceplan.planDeTraitementId }}</td>
+            <td>{{ exerciceplan.duree }}</td>
+            <td>{{ exerciceplan.jour }}</td>
+            <td>{{ exerciceplan.type }}</td>
+            <td>{{ exerciceplan.seance }}</td>
+            <td>{{ exerciceplan.muscles }}</td>
+            <td>{{ exerciceplan.seriesAndRepetitions }}</td>
+            <td>{{ exerciceplan.date }}</td>
+            <td>{{ exerciceplan.createdAt | date }}</td>
+            
+  
+            <td [style.color]="exerciceplan.status ? 'green' : 'red'">
+              {{ exerciceplan.status }}
+            </td>
+            <td>
+                <a href="#deleteModal" class="delete" data-toggle="modal"
+                >
+                delete
+                <i class="material-icons" data-toggle="tooltip" title="Delete"
+                  >&#xE872;</i
+                ></a
+              >
+              <a [routerLink]="'/exercicePlan-details/'+exerciceplan.id"
+              class="delete" data-toggle="modal"
+              >
+              edit
+              <i class="material-icons" data-toggle="tooltip" title="Delete"
+                >&#xE872;</i
+            ></a
+          ></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

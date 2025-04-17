@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row p-3">
+          <div class="col-sm-6">
+            <h2>Gestion des <b>factures</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <a
+            [routerLink]="'/facture-details/null'"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Add New Facture</span></a
+            >
+         
+          </div>
+        </div>
+      </div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">patientId</th>
+            <th scope="col">date</th>
+            <th scope="col">description</th>
+            <th scope="col">price</th>
+            <th scope="col">invoice</th>
+            <th scope="col">subTotal</th>
+            <th scope="col">paymentMethod</th>
+            <th scope="col">tax</th>
+            <th scope="col">total</th>
+            <th scope="col">qty</th>
+            <th scope="col">status</th>
+            <th scope="col">action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Facture of factureList">
+            <td>{{ Facture.id }}</td>
+            <td>{{ Facture.patientId }}</td>
+            <td>{{ Facture.date }}</td>
+            <td>{{ Facture.description }}</td>
+            <td>{{ Facture.price }}</td>
+            <td>{{ Facture.invoice }}</td>
+            <td>{{ Facture.subTotal }}</td>
+            <td>{{ Facture.paymentMethod }}</td>
+            <td>{{ Facture.tax }}</td>
+            <td>{{ Facture.total }}</td>
+            <td>{{ Facture.qty }}</td>
+
+  
+            <td [style.color]="Facture.status ? 'green' : 'red'">
+              {{ Facture.status }}
+            </td>
+            <td>
+            <a href="#deleteModal" class="delete" data-toggle="modal"
+              >
+              delete
+              <i class="material-icons" data-toggle="tooltip" title="Delete"
+                >&#xE872;</i
+              ></a
+            >
+            <a [routerLink]="'/facture-details/'+Facture.id"
+            class="delete" data-toggle="modal"
+            >
+            edit
+            <i class="material-icons" data-toggle="tooltip" title="Delete"
+              >&#xE872;</i
+            ></a
+          ></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

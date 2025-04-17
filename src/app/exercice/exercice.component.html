@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row p-3">
+          <div class="col-sm-6">
+            <h2>Gestion des <b>exercices</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <a
+            [routerLink]="'/exercice-details/null'"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Add New Exercice</span></a
+            >
+         
+          </div>
+        </div>
+      </div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">description</th>
+            <th scope="col">file</th>
+            <th scope="col">nameExercice</th>
+            <th scope="col">nameDisease</th>
+            <th scope="col">date</th>
+            <th scope="col">status</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let exercice of exerciceList">
+           <td>{{ exercice.id }}</td>
+            <td>{{ exercice.description }}</td>
+            <td>{{ exercice.file }}</td>
+            <td>{{ exercice.nameExercice }}</td>
+            <td>{{ exercice.nameDisease }}</td>
+    
+            <td>{{ exercice.createdAt | date }}</td>
+            
+  
+            <td [style.color]="exercice.status ? 'green' : 'red'">
+              {{ exercice.status }}
+            </td>
+            <td>
+            <a href="#deleteModal" class="delete" data-toggle="modal"
+              >
+              delete
+              <i class="material-icons" data-toggle="tooltip" title="Delete"
+                >&#xE872;</i
+              ></a
+            >
+            <a [routerLink]="'/exercice-details/'+exercice.id"
+            class="delete" data-toggle="modal"
+            >
+            edit
+            <i class="material-icons" data-toggle="tooltip" title="Delete"
+              >&#xE872;</i
+            ></a
+          ></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

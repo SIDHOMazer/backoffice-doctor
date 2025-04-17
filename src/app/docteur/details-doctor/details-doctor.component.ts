@@ -11,7 +11,7 @@ import { DocteurService } from 'src/app/service/docteur.service';
 export class DetailsDoctorComponent {
   docteurForm: FormGroup;
   doctorId: any;
-doctorForm: any;
+  doctorForm: any;
   constructor(
     private fb: FormBuilder,
     private docteurService: DocteurService,
@@ -31,6 +31,7 @@ doctorForm: any;
       localisation: [''],
       specialite: [''],
       contact: [''],
+      
     });
   }
 

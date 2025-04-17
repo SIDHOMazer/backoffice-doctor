@@ -6,6 +6,9 @@ import { Admin } from '../model/admin';
   providedIn: 'root'
 })
 export class AdminService {
+  addAdmin: any;
+  getAdminById: any;
+  updateAdmin: any;
 
   constructor(private httpclient:HttpClient) { }
   getAllAdmins(){

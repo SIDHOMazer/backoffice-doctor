@@ -1,0 +1,19 @@
+.home-content {
+    padding: 20px;
+  }
+  
+  .home-content i {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .home-content h1 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+  }
+  
+  .home-content p {
+    color: var(--text-color);
+  }

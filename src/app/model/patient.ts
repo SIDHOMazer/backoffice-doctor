@@ -1,7 +1,7 @@
 export interface Patient {
     id?: number;
-    firstName?: string;
-    lastName?: string;
+    firstname?: string;
+    lastname?: string;
     adresse?: string;
     contact?: string;
     ville?: string;
